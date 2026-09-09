@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_title %}Portfolio Showcase | {{ site_settings.site_name }}{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <div class="container">
+        <span class="badge">Visual Excellence</span>
+        <h1>Studio 101 Showcase</h1>
+        <p>Explore high-end commercial projects, music video sets, and editorial portraits produced in our studio.</p>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        {% include "components/portfolio_showcase.html" %}
+    </div>
+</section>
+
+{% include "components/booking_cta.html" %}
+{% endblock %}

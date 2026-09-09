@@ -1,0 +1,19 @@
+{% load static %}
+<header class="hero" style="background-image: url('{% if hero_slides.0.image %}{{ hero_slides.0.image.url }}{% else %}{% static "ASSETS/IMAGES/hero_studio.png" %}{% endif %}');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <div class="hero-subbrand">
+            <span>{{ site_settings.subbrand_text }}</span>
+        </div>
+        <h1 class="hero-title">{% if hero_slides.0 %}{{ hero_slides.0.title }}{% else %}{{ site_settings.hero_title }}{% endif %}</h1>
+        <p class="hero-desc">{% if hero_slides.0 %}{{ hero_slides.0.subtitle }}{% else %}{{ site_settings.hero_description }}{% endif %}</p>
+        <div class="hero-actions">
+            <a href="{% url 'services:list' %}" class="btn-primary">
+                <i class="fas fa-layer-group"></i> Explore Facilities
+            </a>
+            <a href="{% url 'bookings:request' %}" class="btn-secondary">
+                <i class="fas fa-calendar-alt"></i> Reserve Session
+            </a>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_title %}{{ project.title }} | {{ site_settings.site_name }}{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <div class="container">
+        <span class="badge">{{ project.category.name }}</span>
+        <h1>{{ project.title }}</h1>
+        {% if project.client_name %}<p>Client: {{ project.client_name }}</p>{% endif %}
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div style="margin-bottom: 40px; text-align: center;">
+            {% if project.cover_image %}
+                <img src="{{ project.cover_image.url }}" alt="{{ project.title }}" style="max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-burgundy);">
+            {% endif %}
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto 60px; line-height: 1.8; color: var(--text-muted);">
+            <h2 style="color: #fff; margin-bottom: 20px;">Project Overview</h2>
+            <p>{{ project.description|linebreaks }}</p>
+        </div>
+
+        {% if gallery_images %}
+            <div class="section-header">
+                <span class="badge">Gallery</span>
+                <h2>Behind the Lens</h2>
+            </div>
+            <div class="gallery-grid">
+                {% for item in gallery_images %}
+                    <div class="gallery-item lightbox-trigger" data-caption="{{ item.caption|default:project.title }}">
+                        <img src="{{ item.image.url }}" alt="{{ item.caption }}">
+                        <div class="gallery-overlay">
+                            <h4>{{ item.caption }}</h4>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+{% include "components/booking_cta.html" %}
+{% endblock %}

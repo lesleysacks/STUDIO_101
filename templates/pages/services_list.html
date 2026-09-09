@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_title %}Services & Rates | {{ site_settings.site_name }}{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <div class="container">
+        <span class="badge">Production Offerings</span>
+        <h1>Studio Services & Packages</h1>
+        <p>Ultra-premium studio spaces and production packages engineered for creators, brands, and agencies.</p>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        {% include "components/service_grid.html" %}
+    </div>
+</section>
+
+<!-- Pricing Packages Section -->
+<section style="background: var(--bg-card); border-top: 1px solid var(--border-color);">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Standard Rates</span>
+            <h2>Transparent Pricing Tiers</h2>
+            <p>Every session includes full equipment access, client vanity access, and high-speed fiber Wi-Fi.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <span class="pricing-subtitle">Standard Hire</span>
+                    <h3 class="pricing-title">Studio Express</h3>
+                    <div class="pricing-amount">R1,300</div>
+                    <div class="pricing-duration">1 Hour 30 Mins Access</div>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check" style="color: var(--primary-light);"></i> Full Infinity Cyclorama Access</li>
+                    <li><i class="fas fa-check" style="color: var(--primary-light);"></i> 2x Profoto Strobe Lights</li>
+                    <li><i class="fas fa-check" style="color: var(--primary-light);"></i> Private Makeup & Dressing Room</li>
+                    <li><i class="fas fa-check" style="color: var(--primary-light);"></i> High-Speed Fiber Internet</li>
+                </ul>
+                <a href="{% url 'bookings:request' %}" class="btn-secondary" style="width: 100%; text-align: center;">Reserve Express</a>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-header">
+                    <span class="pricing-subtitle">Half Day Session</span>
+                    <h3 class="pricing-title">Pro Creator</h3>
+                    <div class="pricing-amount">R3,800</div>
+                    <div class="pricing-duration">4 Hours Full Access</div>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check" style="color: var(--primary-light);"></i> Full Infinity & Podcast Suite</li>
+                    <li><i class="fas fa-check" style="color: var(--primary-light);"></i> 4x Profoto Strobes + RGB Trusses</li>
+                    <li><i class="fas fa-check" style="color: var(--primary-light);"></i> Shure SM7B Broadcast Mics</li>
+                    <li><i class="fas fa-check" style="color: var(--primary-light);"></i> Dedicated Studio Assistant</li>
+                </ul>
+                <a href="{% url 'bookings:request' %}" class="btn-primary" style="width: 100%; text-align: center;">Reserve Pro</a>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <span class="pricing-subtitle">Full Day Block</span>
+                    <h3 class="pricing-title">Commercial Film</h3>
+                    <div class="pricing-amount">R8,500</div>
+                    <div class="pricing-duration">10 Hours Unlimited Access</div>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check" style="color: var(--primary-light);"></i> Complete Studio 101 Facility Lockout</li>
+                    <li><i class="fas fa-check" style="color: var(--primary-light);"></i> Cinema Camera Rigs & Atmospheric Smoke</li>
+                    <li><i class="fas fa-check" style="color: var(--primary-light);"></i> Green Room & Catering Lounge</li>
+                    <li><i class="fas fa-check" style="color: var(--primary-light);"></i> Full Production Support Team</li>
+                </ul>
+                <a href="{% url 'bookings:request' %}" class="btn-secondary" style="width: 100%; text-align: center;">Reserve Day Lockout</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "components/booking_cta.html" %}
+{% endblock %}

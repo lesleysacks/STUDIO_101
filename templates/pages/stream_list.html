@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_title %}Live Streams & Broadcasts | {{ site_settings.site_name }}{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <div class="container">
+        <span class="badge">Studio Broadcasts</span>
+        <h1>Live Stream Hub</h1>
+        <p>Watch live streams and upcoming scheduled events broadcasted directly from Studio 101.</p>
+    </div>
+</header>
+
+<!-- Featured Live Stream Component -->
+{% include "components/live_stream.html" with stream=active_live %}
+
+<section>
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Schedule & Archive</span>
+            <h2>Broadcast Directory</h2>
+        </div>
+
+        <div class="grid-3">
+            {% if streams %}
+                {% for item in streams %}
+                    <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                                {% if item.is_live %}
+                                    <span class="badge" style="background: rgba(163, 34, 68, 0.3); color: #ff4d6d; margin: 0;">LIVE NOW</span>
+                                {% else %}
+                                    <span class="badge" style="background: rgba(255, 255, 255, 0.05); color: var(--text-secondary); margin: 0;">{{ item.get_platform_display }}</span>
+                                {% endif %}
+                                <span style="font-size: 12px; color: var(--text-muted);">{{ item.created_at|date:"M j, Y" }}</span>
+                            </div>
+                            <h3>{{ item.title }}</h3>
+                            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">{{ item.description|truncatewords:20 }}</p>
+                        </div>
+                        <a href="{% url 'streams:detail' slug=item.slug %}" class="btn-secondary" style="width: 100%; text-align: center;">View Stream</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p style="text-align: center; grid-column: 1 / -1; color: var(--text-muted);">No broadcast events listed yet.</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% include "components/booking_cta.html" %}
+{% endblock %}

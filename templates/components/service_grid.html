@@ -1,0 +1,68 @@
+{% load static %}
+<section style="background: var(--bg-card); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Explore Studio 101</span>
+            <h2>Tailored Production Hubs</h2>
+            <p>Browse our specialized facilities built for commercial photography, podcasts, content creators, and broadcast videos.</p>
+        </div>
+
+        <div class="grid-3">
+            {% if featured_services %}
+                {% for service in featured_services %}
+                    <div class="service-card">
+                        <div class="service-img-wrapper lightbox-trigger" data-caption="{{ service.title }}">
+                            {% if service.featured_image %}
+                                <img src="{{ service.featured_image.url }}" alt="{{ service.title }}">
+                            {% else %}
+                                <img src="{% static 'ASSETS/IMAGES/service_photography.png' %}" alt="{{ service.title }}">
+                            {% endif %}
+                            <div class="service-badge-overlay">{{ service.category.name|default:"Studio" }}</div>
+                        </div>
+                        <div class="service-content">
+                            <h3>{{ service.title }}</h3>
+                            <p>{{ service.summary }}</p>
+                            <a href="{% url 'services:detail' slug=service.slug %}" class="btn-secondary" style="width: 100%;">View Details</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="service-card">
+                    <div class="service-img-wrapper lightbox-trigger" data-caption="Studio Photography Hire">
+                        <img src="{% static 'ASSETS/IMAGES/service_photography.png' %}" alt="Studio Photography Hire">
+                        <div class="service-badge-overlay">Photography</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Studio Photography</h3>
+                        <p>High-end studio space equipped with Profoto strobes, large softboxes, and clean white infinity curve walls.</p>
+                        <a href="{% url 'services:list' %}" class="btn-secondary" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img-wrapper lightbox-trigger" data-caption="Podcast Recording Studio">
+                        <img src="{% static 'ASSETS/IMAGES/service_podcast.png' %}" alt="Podcast Shooting Studio">
+                        <div class="service-badge-overlay">Podcast</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Podcast Recording</h3>
+                        <p>Soundproof acoustic studio suite with Shure SM7B broadcast microphones and multi-cam broadcast capability.</p>
+                        <a href="{% url 'services:list' %}" class="btn-secondary" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img-wrapper lightbox-trigger" data-caption="Music Video & Commercial Film Set">
+                        <img src="{% static 'ASSETS/IMAGES/service_music.png' %}" alt="Music Video Stage">
+                        <div class="service-badge-overlay">Music & Ads</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Music & Ad Productions</h3>
+                        <p>Expansive industrial studio stage with atmospheric smoke, intelligent moving lights, and cinema camera setups.</p>
+                        <a href="{% url 'services:list' %}" class="btn-secondary" style="width: 100%;">View Details</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

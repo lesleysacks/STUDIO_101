@@ -1,0 +1,61 @@
+{% load static %}
+<section class="live-stream-section" style="background: var(--bg-surface); border-top: 1px solid var(--border-burgundy); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+        <div class="section-header">
+            {% if stream and stream.is_live %}
+                <span class="badge" style="background: rgba(163, 34, 68, 0.3); border-color: var(--accent-rose); color: #ff4d6d; animation: pulseGlow 2s infinite;">
+                    <i class="fas fa-circle" style="font-size: 8px; margin-right: 6px; vertical-align: middle;"></i> LIVE BROADCAST
+                </span>
+                <h2>{{ stream.title }}</h2>
+                <p>{{ stream.description|default:"Broadcasting live from Studio 101." }}</p>
+            {% elif stream and stream.scheduled_at %}
+                <span class="badge" style="background: rgba(212, 175, 55, 0.15); border-color: var(--accent-gold); color: var(--accent-gold);">
+                    <i class="fas fa-clock" style="margin-right: 6px;"></i> UPCOMING STREAM
+                </span>
+                <h2>{{ stream.title }}</h2>
+                <p>Scheduled Broadcast: {{ stream.scheduled_at|date:"F j, Y - H:i T" }}</p>
+            {% else %}
+                <span class="badge">Live Production Studio</span>
+                <h2>Studio 101 Broadcast Center</h2>
+                <p>Ultra-low latency live streaming, multi-cam switching, and corporate broadcast hub.</p>
+            {% endif %}
+        </div>
+
+        <div class="live-stream-wrapper" style="max-width: 960px; margin: 0 auto;">
+            {% if stream and stream.embed_url %}
+                <div class="video-container" style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-burgundy); box-shadow: var(--shadow-cinematic);">
+                    <iframe 
+                        src="{{ stream.embed_url }}" 
+                        title="{{ stream.title }}"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            {% else %}
+                <!-- Dynamic Offline / Studio Idle Fallback Card -->
+                <div class="stream-offline-card" style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: linear-gradient(135deg, rgba(13, 13, 15, 0.95) 0%, rgba(92, 10, 34, 0.35) 100%); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; box-shadow: var(--shadow-cinematic);">
+                    <div style="width: 70px; height: 70px; background: rgba(92, 10, 34, 0.3); border: 1px solid var(--accent-rose); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--accent-rose); font-size: 28px;">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3 style="font-size: 24px; margin-bottom: 12px; color: var(--text-primary);">Broadcast Feed Offline</h3>
+                    <p style="color: var(--text-secondary); max-width: 540px; font-size: 15px; margin-bottom: 28px;">
+                        No active live stream is currently broadcasting. Contact our team to schedule your studio broadcast session or explore past showcase work.
+                    </p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+                        <a href="{% url 'bookings:request' %}" class="btn-primary">Book Broadcast Suite</a>
+                        <a href="{% url 'portfolio:list' %}" class="btn-secondary">Watch Showreels</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<style>
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(163, 34, 68, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(163, 34, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(163, 34, 68, 0); }
+}
+</style>

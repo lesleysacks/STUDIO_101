@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_title %}Contact Us | {{ site_settings.site_name }}{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <div class="container">
+        <span class="badge">Get In Touch</span>
+        <h1>Contact Studio 101</h1>
+        <p>Our team responds within 2 hours during normal operating hours.</p>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div class="grid-2">
+            <div>
+                <span class="badge">Direct Inquiries</span>
+                <h2 style="font-size: 32px; margin-bottom: 24px;">Visit or Reach Out</h2>
+                <div style="margin-bottom: 32px; line-height: 2;">
+                    <p><i class="fas fa-envelope" style="color: var(--primary-light); width: 24px;"></i> {{ site_settings.contact_email }}</p>
+                    <p><i class="fas fa-phone" style="color: var(--primary-light); width: 24px;"></i> {{ site_settings.contact_phone }}</p>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--primary-light); width: 24px;"></i> {{ site_settings.address }}</p>
+                </div>
+                <div style="background: var(--bg-card); padding: 24px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                    <h4 style="margin-bottom: 8px;">Operating Hours</h4>
+                    <p style="color: var(--text-muted); font-size: 14px;">Monday – Saturday: 07:00 AM – 10:00 PM<br>Sunday: Available for Full-Day Commercial Lockouts</p>
+                </div>
+            </div>
+            <div>
+                <div style="background: var(--bg-card); border: 1px solid var(--border-burgundy); border-radius: var(--radius-sm); padding: 36px;">
+                    <h3 style="font-size: 22px; margin-bottom: 20px;">Send a Message</h3>
+                    <form method="post" action="{% url 'bookings:request' %}">
+                        {% csrf_token %}
+                        <div style="margin-bottom: 16px;">
+                            {{ booking_form.full_name }}
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                            {{ booking_form.email }}
+                        </div>
+                        <div style="margin-bottom: 16px;">
+                            {{ booking_form.phone }}
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            {{ booking_form.project_details }}
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

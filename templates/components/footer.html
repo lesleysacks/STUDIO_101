@@ -1,0 +1,43 @@
+{% load static %}
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">STUDIO <span>101</span></div>
+                <p>The commercial production evolution of Canwill-Smith Photography. Ultra-premium facilities for elite visual storytelling.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="{% url 'core:home' %}">Home</a></li>
+                    <li><a href="{% url 'core:about' %}">About Studio 101</a></li>
+                    <li><a href="{% url 'services:list' %}">Services</a></li>
+                    <li><a href="{% url 'portfolio:list' %}">Portfolio</a></li>
+                    <li><a href="{% url 'core:faq' %}">Frequently Asked</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="{% url 'services:list' %}">Photography Studio Hire</a></li>
+                    <li><a href="{% url 'services:list' %}">Podcast Shooting Suite</a></li>
+                    <li><a href="{% url 'services:list' %}">Content Creator Set</a></li>
+                    <li><a href="{% url 'services:list' %}">Music Shoot Stage</a></li>
+                    <li><a href="{% url 'services:list' %}">Commercial Ad Filming</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-envelope" style="color: var(--primary-light); margin-right: 8px;"></i> {{ site_settings.contact_email }}</li>
+                    <li><i class="fas fa-phone" style="color: var(--primary-light); margin-right: 8px;"></i> {{ site_settings.contact_phone }}</li>
+                    <li><i class="fas fa-map-marker-alt" style="color: var(--primary-light); margin-right: 8px;"></i> {{ site_settings.address }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Studio 101. Powered by <strong>Canwill-Smith Photography</strong>. All Rights Reserved.</p>
+            <p>Designed for Corporate Luxury & High-End Production.</p>
+        </div>
+    </div>
+</footer>

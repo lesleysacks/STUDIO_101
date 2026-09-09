@@ -1,0 +1,12 @@
+{% load static %}
+<article class="project-card gallery-item lightbox-trigger" data-caption="{{ project.title }} - {{ project.client_name }}">
+    {% if project.cover_image %}
+        <img src="{{ project.cover_image.url }}" alt="{{ project.title }}">
+    {% else %}
+        <img src="{% static 'ASSETS/IMAGES/hero_studio.png' %}" alt="{{ project.title }}">
+    {% endif %}
+    <div class="gallery-overlay">
+        <h4>{{ project.title }}</h4>
+        <p>{{ project.category.name }} {% if project.client_name %}| {{ project.client_name }}{% endif %}</p>
+    </div>
+</article>

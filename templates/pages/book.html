@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_title %}Reserve Session | {{ site_settings.site_name }}{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <div class="container">
+        <span class="badge">Session Reservation</span>
+        <h1>Book Studio 101</h1>
+        <p>Reserve your production session. Standard sessions start at <strong>R1,300.00</strong> for 1 Hour 30 Mins.</p>
+    </div>
+</header>
+
+<section>
+    <div class="container" style="max-width: 800px;">
+        {% if success_message %}
+            <div style="background: rgba(128, 0, 32, 0.25); border: 1px solid var(--primary-light); color: #fff; padding: 24px; border-radius: var(--radius-sm); margin-bottom: 32px; text-align: center;">
+                <i class="fas fa-check-circle" style="font-size: 32px; color: #ff4d6d; margin-bottom: 12px; display: block;"></i>
+                <h3 style="margin-bottom: 8px;">Reservation Received</h3>
+                <p>{{ success_message }}</p>
+            </div>
+        {% endif %}
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-burgundy); border-radius: var(--radius-sm); padding: 40px; box-shadow: var(--shadow-cinematic);">
+            <form method="post" id="studio-booking-form">
+                {% csrf_token %}
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Full Name *</label>
+                        {{ form.full_name }}
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Email Address *</label>
+                        {{ form.email }}
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Phone Number *</label>
+                        {{ form.phone }}
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Company / Brand</label>
+                        {{ form.company_or_project }}
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Preferred Date</label>
+                        {{ form.preferred_date }}
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Estimated Budget</label>
+                        {{ form.estimated_budget }}
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 28px;">
+                    <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Project Details & Concept *</label>
+                    {{ form.project_details }}
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%;">Submit Reservation Inquiry</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

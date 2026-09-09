@@ -1,0 +1,26 @@
+{% load static %}
+<nav class="navbar" aria-label="Main Navigation">
+    <div class="container nav-container">
+        <a href="{% url 'core:home' %}" class="logo-group">
+            <div class="logo">STUDIO <span>101</span></div>
+            <div class="logo-sub">{{ site_settings.tagline }}</div>
+        </a>
+        
+        <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <ul class="nav-links">
+            <li><a href="{% url 'core:home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
+            <li><a href="{% url 'core:about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
+            <li><a href="{% url 'services:list' %}" class="{% if request.resolver_match.app_name == 'services' %}active{% endif %}">Services</a></li>
+            <li><a href="{% url 'portfolio:list' %}" class="{% if request.resolver_match.app_name == 'portfolio' %}active{% endif %}">Portfolio</a></li>
+            <li><a href="{% url 'studio:overview' %}" class="{% if request.resolver_match.app_name == 'studio' %}active{% endif %}">Studio Space</a></li>
+            <li><a href="{% url 'streams:list' %}" class="{% if request.resolver_match.app_name == 'streams' %}active{% endif %}">Live Stream</a></li>
+            <li><a href="{% url 'core:faq' %}" class="{% if request.resolver_match.url_name == 'faq' %}active{% endif %}">FAQ</a></li>
+            <li><a href="{% url 'bookings:request' %}" class="nav-cta">Book Now</a></li>
+        </ul>
+    </div>
+</nav>

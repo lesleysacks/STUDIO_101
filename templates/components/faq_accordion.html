@@ -1,0 +1,26 @@
+{% load static %}
+<div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+    {% if faqs %}
+        {% for faq in faqs %}
+            <div class="faq-item" style="border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 16px; background: var(--bg-card); overflow: hidden;">
+                <button class="faq-question" style="width: 100%; text-align: left; padding: 20px 24px; background: transparent; border: none; color: #fff; font-family: var(--font-heading); font-size: 18px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" aria-expanded="false">
+                    <span>{{ faq.question }}</span>
+                    <i class="fas fa-chevron-down" style="color: var(--primary-light); transition: transform 0.3s ease;"></i>
+                </button>
+                <div class="faq-answer" style="padding: 0 24px 20px; color: var(--text-muted); font-size: 15px; display: none;">
+                    <p>{{ faq.answer }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="faq-item active" style="border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 16px; background: var(--bg-card); overflow: hidden;">
+            <button class="faq-question" style="width: 100%; text-align: left; padding: 20px 24px; background: transparent; border: none; color: #fff; font-family: var(--font-heading); font-size: 18px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" aria-expanded="true">
+                <span>What equipment is included in the standard studio hire?</span>
+                <i class="fas fa-chevron-down" style="color: var(--primary-light);"></i>
+            </button>
+            <div class="faq-answer" style="padding: 0 24px 20px; color: var(--text-muted); font-size: 15px;">
+                <p>Standard hire includes complete access to our Profoto strobes, softboxes, background C-stands, client makeup vanity, and high-speed fiber Wi-Fi.</p>
+            </div>
+        </div>
+    {% endif %}
+</div>

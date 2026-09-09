@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_title %}About Us | {{ site_settings.site_name }}{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <div class="container">
+        <span class="badge">Our Story & Legacy</span>
+        <h1>Engineered for Visual Perfection</h1>
+        <p>Studio 101 represents the commercial production evolution of Canwill-Smith Photography.</p>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div class="grid-2">
+            <div>
+                <span class="badge">Commercial Production</span>
+                <h2 style="font-size: 34px; margin-bottom: 20px;">Corporate Luxury Meets Industrial Precision</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">
+                    Built in 2026, Studio 101 was designed to eliminate the compromises found in standard rental spaces. From acoustics to lighting trusses and client amenities, every square foot is optimized for speed, luxury, and visual impact.
+                </p>
+                <p style="color: var(--text-muted); margin-bottom: 30px;">
+                    Whether hosting high-profile celebrity podcasts, commercial ad filming, or music video sets, our space delivers absolute control over lighting, sound, and mood.
+                </p>
+                <a href="{% url 'bookings:request' %}" class="btn-primary">Book Studio Visit</a>
+            </div>
+            <div>
+                <img src="{% static 'ASSETS/IMAGES/hero_studio.png' %}" alt="Studio 101 Interior" style="border-radius: var(--radius-sm); border: 1px solid var(--border-burgundy); box-shadow: var(--shadow-cinematic);">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "components/studio_highlight.html" %}
+{% include "components/booking_cta.html" %}
+{% endblock %}

@@ -1,0 +1,66 @@
+{% load static %}
+<section>
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Visual Portfolio</span>
+            <h2>Inside Studio 101</h2>
+            <p>Click on any image to launch our immersive burgundy-rimmed lightbox viewer.</p>
+        </div>
+
+        <div class="gallery-grid">
+            {% if featured_projects %}
+                {% for project in featured_projects %}
+                    {% include "components/project_card.html" with project=project %}
+                {% endfor %}
+            {% else %}
+                <div class="gallery-item lightbox-trigger" data-caption="Studio 101 Main Interior & Lighting Array">
+                    <img src="{% static 'ASSETS/IMAGES/hero_studio.png' %}" alt="Studio 101 Main Interior">
+                    <div class="gallery-overlay">
+                        <h4>Main Studio Interior</h4>
+                        <p>Dark Moody Aesthetic</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item lightbox-trigger" data-caption="Profoto Lighting & Camera Rig Setup">
+                    <img src="{% static 'ASSETS/IMAGES/service_photography.png' %}" alt="Profoto Lighting Setup">
+                    <div class="gallery-overlay">
+                        <h4>Photography Bay</h4>
+                        <p>Infinity Curve Cyclorama</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item lightbox-trigger" data-caption="Multi-Cam Soundproof Podcast Suite">
+                    <img src="{% static 'ASSETS/IMAGES/service_podcast.png' %}" alt="Soundproof Podcast Suite">
+                    <div class="gallery-overlay">
+                        <h4>Podcast Suite</h4>
+                        <p>Acoustic Burgundy Panels</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item lightbox-trigger" data-caption="Modern Social Media Content Creator Corner">
+                    <img src="{% static 'ASSETS/IMAGES/service_creator.png' %}" alt="Content Creator Studio Set">
+                    <div class="gallery-overlay">
+                        <h4>Creator Set</h4>
+                        <p>TikTok & Reels Ready</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item lightbox-trigger" data-caption="Music Video Stage with Intelligent Moving Head Lights">
+                    <img src="{% static 'ASSETS/IMAGES/service_music.png' %}" alt="Music Video Stage">
+                    <div class="gallery-overlay">
+                        <h4>Music Stage</h4>
+                        <p>Atmospheric Smoke & RGB</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item lightbox-trigger" data-caption="Commercial Cinema Rig & Green Screen Setup">
+                    <img src="{% static 'ASSETS/IMAGES/service_ad.png' %}" alt="Commercial Ad Film Set">
+                    <div class="gallery-overlay">
+                        <h4>Commercial Film Set</h4>
+                        <p>RED / ARRI Cinema Rigs</p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

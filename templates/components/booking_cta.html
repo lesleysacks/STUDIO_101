@@ -1,0 +1,12 @@
+{% load static %}
+<section style="background: radial-gradient(circle at center, rgba(128, 0, 32, 0.25) 0%, rgba(12, 12, 12, 1) 80%); border-top: 1px solid var(--border-burgundy);">
+    <div class="container" style="text-align: center; max-width: 800px;">
+        <span class="badge">Book Your Session</span>
+        <h2 style="font-size: 38px; margin-bottom: 20px;">Ready to Elevate Your Next Project?</h2>
+        <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 36px;">Our signature standard package starts at <strong>R1,300.00</strong> for <strong>1 Hour 30 Mins</strong> of full studio access, professional gear, and dedicated support.</p>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <a href="{% url 'bookings:request' %}" class="btn-primary">Book Now</a>
+            <a href="{% url 'services:list' %}" class="btn-secondary">View Packages & Rates</a>
+        </div>
+    </div>
+</section>

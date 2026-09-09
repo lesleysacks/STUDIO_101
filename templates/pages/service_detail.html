@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_title %}{{ service.title }} | {{ site_settings.site_name }}{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <div class="container">
+        <span class="badge">{{ service.category.name|default:"Studio Facility" }}</span>
+        <h1>{{ service.title }}</h1>
+        <p>{{ service.summary }}</p>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div class="grid-2">
+            <div>
+                {% if service.featured_image %}
+                    <img src="{{ service.featured_image.url }}" alt="{{ service.title }}" style="border-radius: var(--radius-sm); border: 1px solid var(--border-burgundy);">
+                {% else %}
+                    <img src="{% static 'ASSETS/IMAGES/service_photography.png' %}" alt="{{ service.title }}" style="border-radius: var(--radius-sm); border: 1px solid var(--border-burgundy);">
+                {% endif %}
+            </div>
+            <div>
+                <h2 style="font-size: 32px; margin-bottom: 16px;">Overview & Technical Specifications</h2>
+                <div style="color: var(--text-muted); line-height: 1.8; margin-bottom: 24px;">
+                    {{ service.full_description|linebreaks }}
+                </div>
+                {% if service.starting_price %}
+                    <div style="font-size: 24px; font-weight: 700; color: var(--primary-light); margin-bottom: 24px;">
+                        Starting from R{{ service.starting_price }} <span style="font-size: 14px; color: var(--text-muted);">({{ service.duration_label }})</span>
+                    </div>
+                {% endif %}
+                <a href="{% url 'bookings:request' %}" class="btn-primary">Book This Service</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "components/booking_cta.html" %}
+{% endblock %}
