@@ -1,14 +1,16 @@
 """
-Core application views for handling global site pages such as Home, About, FAQ, and Contact.
+Core application views for handling global site pages such as Home, About, FAQ, Contact, and Robots.txt.
 
 Views:
     home_view: Compiles hero slides, live streams, featured services, portfolio showcase, and FAQs for homepage.
     about_view: Displays studio heritage, facilities overview, and brand philosophy.
     faq_view: Lists frequently asked questions grouped by categories.
     contact_view: Renders contact details and direct inquiry booking form.
+    robots_txt_view: Renders dynamic robots.txt file with sitemap reference.
 """
 
 from django.shortcuts import render
+from django.http import HttpResponse
 from .models import HeroSlide, FAQ
 from apps.services.models import Service
 from apps.portfolio.models import Project
@@ -72,3 +74,18 @@ def contact_view(request):
     """
     booking_form = BookingRequestForm()
     return render(request, 'pages/contact.html', {'booking_form': booking_form})
+
+
+def robots_txt_view(request):
+    """
+    Renders plain-text robots.txt file allowing public search engine indexation
+    while disallowing access to administrative panels and pointing to sitemap.xml.
+    """
+    host = request.get_host()
+    scheme = request.scheme
+    content = (
+        "User-agent: *\n"
+        "Disallow: /admin/\n\n"
+        f"Sitemap: {scheme}://{host}/sitemap.xml\n"
+    )
+    return HttpResponse(content, content_type="text/plain")

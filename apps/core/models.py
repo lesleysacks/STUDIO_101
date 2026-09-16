@@ -22,6 +22,7 @@ class SiteSettings(models.Model):
 
     def save(self, *args, **kwargs):
         self.pk = 1  # Force singleton
+        kwargs.pop('force_insert', None)
         super().save(*args, **kwargs)
 
     def __str__(self):
