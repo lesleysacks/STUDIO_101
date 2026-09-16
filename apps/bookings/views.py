@@ -6,6 +6,33 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .forms import BookingRequestForm
 from .utils import send_booking_notifications
+from django.core.mail import send_mail
+from django.conf import settings
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+def notify_booking(booking):
+    try:
+        # Studio notification
+        send_mail(
+            subject=f"New Booking Request: {booking.client_name}",
+            message=f"Service: {booking.service}\nDate: {booking.date}\nClient: {booking.client_email}",
+            from_email=settings.STUDIO_NOTIFICATION_EMAIL,
+            recipient_list=[settings.STUDIO_NOTIFICATION_EMAIL],
+            fail_silently=True,
+        )
+        # Client acknowledgement
+        send_mail(
+            subject="Your booking request has been received",
+            message="Thank you for contacting STUDIO101. Our team will reach out shortly.",
+            from_email=settings.STUDIO_NOTIFICATION_EMAIL,
+            recipient_list=[booking.client_email],
+            fail_silently=True,
+        )
+    except Exception as e:
+        logger.error(f"Booking notification failed: {e}")
 
 
 def booking_view(request):

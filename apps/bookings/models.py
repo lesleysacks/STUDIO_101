@@ -2,26 +2,33 @@
 Models for managing client booking inquiries, session preferences, and operational triage status.
 """
 
+from django.contrib import admin
 from django.db import models
 
 
 class BookingRequest(models.Model):
-    """
-    Stores client booking inquiry details, requested services, preferred dates, and internal triage notes.
-
-    Operational Status Workflow:
-        NEW -> CONTACTED -> QUOTED -> CONFIRMED -> COMPLETED
-        Termination: CANCELLED
-    """
-
+    id = models.AutoField(primary_key=True)
     STATUS_CHOICES = [
-        ('new', 'New Request'),
-        ('contacted', 'Client Contacted'),
-        ('quoted', 'Quoted'),
-        ('confirmed', 'Confirmed & Scheduled'),
-        ('completed', 'Completed'),
-        ('cancelled', 'Cancelled / Declined'),
+        ("NEW", "New"),
+        ("CONTACTED", "Contacted"),
+        ("QUOTED", "Quoted"),
+        ("CONFIRMED", "Confirmed"),
+        ("COMPLETED", "Completed"),
+        ("CANCELLED", "Cancelled"),
     ]
+
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default="NEW",
+        help_text="Operational triage state."
+    )
+
+    # other fields like client_full_name, client_email, service_type, booking_date, created_at...
+
+
+
+
 
     full_name = models.CharField(max_length=150, help_text="Client full name.")
     email = models.EmailField(help_text="Client contact email address.")

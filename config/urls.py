@@ -1,13 +1,11 @@
-"""
-Main URL configuration for the STUDIO101 platform.
-Includes domain application routers, admin panel, sitemap XML, and robots.txt.
-"""
+from django.contrib.sitemaps.views import sitemap
+from django.contrib.sitemaps import GenericSitemap
+from apps.bookings.models import BookingRequest
 
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.sitemaps.views import sitemap
 
 from apps.core.sitemaps import StaticViewSitemap, ServiceSitemap, ProjectSitemap, StreamSitemap
 from apps.core.views import robots_txt_view
@@ -17,6 +15,10 @@ sitemaps = {
     'services': ServiceSitemap,
     'portfolio': ProjectSitemap,
     'streams': StreamSitemap,
+    'bookings': GenericSitemap({
+        "queryset": BookingRequest.objects.all(),
+        "date_field": "created_at",
+    }, priority=0.6),
 }
 
 urlpatterns = [
@@ -27,7 +29,11 @@ urlpatterns = [
     path('studio/', include('apps.studio.urls', namespace='studio')),
     path('book/', include('apps.bookings.urls', namespace='bookings')),
     path('streams/', include('apps.streams.urls', namespace='streams')),
+
+    # Sitemap route
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+
+    # Robots.txt route
     path('robots.txt', robots_txt_view, name='robots_txt'),
 ]
 
