@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "slug": "podcast",
+  "name": "Podcast Recording",
+  "summary": "Soundproof acoustic studio suite with Shure SM7B broadcast microphones and multi-cam broadcast capability.",
+  "description": "Soundproof acoustic studio suite with Shure SM7B broadcast microphones and multi-cam broadcast capability.",
+  "category": {
+    "slug": "podcast",
+    "name": "Podcast"
+  },
+  "featured_image": "ASSETS/IMAGES/service_podcast.png",
+  "image_alt": "Podcast Recording",
+  "starting_price": 1300,
+  "price_label": "From R1300",
+  "price_unit": "per session",
+  "duration_label": "1 Hour 30 Mins",
+  "features": [
+    {
+      "title": "Shure SM7B microphones"
+    },
+    {
+      "title": "Acoustic treatment"
+    },
+    {
+      "title": "Multi-cam switching"
+    }
+  ],
+  "cta_label": "Book This Service",
+  "cta_href": "/book/",
+  "seo": {
+    "title": "Podcast Recording | Studio 101",
+    "description": "Soundproof acoustic studio suite with Shure SM7B broadcast microphones and multi-cam broadcast capability."
+  },
+  "order": 2,
+  "is_featured": true,
+  "published": true
+}

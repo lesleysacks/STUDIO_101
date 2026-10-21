@@ -1,0 +1,28 @@
+<section style="background: var(--bg-card); border-top: 1px solid var(--border-color);">
+    <div class="container">
+        <div class="section-header">
+            {% if data.eyebrow %}<span class="badge">{{ data.eyebrow }}</span>{% endif %}
+            <h2>{{ data.heading }}</h2>
+            {% if data.intro %}<p>{{ data.intro }}</p>{% endif %}
+        </div>
+        <div class="pricing-grid">
+            {% for plan in data.plans %}
+                <article class="pricing-card{% if plan.featured %} featured{% endif %}">
+                    {% if plan.badge %}<div class="pricing-badge">{{ plan.badge }}</div>{% endif %}
+                    <div class="pricing-header">
+                        {% if plan.subtitle %}<span class="pricing-subtitle">{{ plan.subtitle }}</span>{% endif %}
+                        <h3 class="pricing-title">{{ plan.title }}</h3>
+                        <div class="pricing-amount">{{ plan.amount }}</div>
+                        <div class="pricing-duration">{{ plan.duration }}</div>
+                    </div>
+                    <ul class="pricing-features">
+                        {% for feature in plan.features %}
+                            <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                    <a href="{{ plan.cta_href }}" class="{% if plan.featured %}btn-primary{% else %}btn-secondary{% endif %}" style="width: 100%; text-align: center;">{{ plan.cta_label }}</a>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

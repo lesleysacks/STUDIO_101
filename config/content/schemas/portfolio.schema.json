@@ -1,0 +1,124 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "client_name": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 4000
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 100
+        }
+      },
+      "required": [
+        "slug",
+        "name"
+      ]
+    },
+    "image": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "image_alt": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "gallery": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "image": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "alt": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "caption": {
+            "type": "string",
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "image",
+          "alt"
+        ]
+      }
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "published": {
+      "type": "boolean",
+      "default": true
+    },
+    "order": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0
+    },
+    "seo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "slug",
+    "title",
+    "summary",
+    "description",
+    "category",
+    "image",
+    "image_alt"
+  ]
+}

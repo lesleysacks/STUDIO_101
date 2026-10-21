@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "colors": {
+    "primary": "#800020",
+    "primary_light": "#a31c3c",
+    "background": "#070707",
+    "surface": "#121212",
+    "text": "#ffffff",
+    "muted": "#cccccc",
+    "subtle": "#888888",
+    "accent": "#d4af37"
+  },
+  "layout": {
+    "content_width": "1280px",
+    "section_spacing": "100px",
+    "card_radius": "4px",
+    "radius_md": "8px",
+    "radius_lg": "16px"
+  },
+  "typography": {
+    "heading_font": "cinzel",
+    "body_font": "jakarta"
+  },
+  "navigation": {
+    "style": "fixed-dark"
+  },
+  "footer": {
+    "style": "columns"
+  }
+}

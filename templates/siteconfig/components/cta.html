@@ -1,0 +1,11 @@
+<section style="background: radial-gradient(circle at center, rgba(128, 0, 32, 0.25) 0%, rgba(12, 12, 12, 1) 80%); border-top: 1px solid var(--border-burgundy);">
+    <div class="container" style="text-align: center; max-width: 800px;">
+        {% if data.eyebrow %}<span class="badge">{{ data.eyebrow }}</span>{% endif %}
+        <h2 style="font-size: 38px; margin-bottom: 20px;">{{ data.heading }}</h2>
+        {% if data.text %}<p style="color: var(--text-muted); font-size: 16px; margin-bottom: 36px;">{{ data.text }}</p>{% endif %}
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            {% if data.primary_cta.label %}<a href="{{ data.primary_cta.href }}" class="btn-primary">{{ data.primary_cta.label }}</a>{% endif %}
+            {% if data.secondary_cta.label %}<a href="{{ data.secondary_cta.href }}" class="btn-secondary">{{ data.secondary_cta.label }}</a>{% endif %}
+        </div>
+    </div>
+</section>

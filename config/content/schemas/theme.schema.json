@@ -1,0 +1,155 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "colors": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "primary": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "primary_light": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "background": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "surface": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "text": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "muted": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "subtle": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "accent": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        }
+      },
+      "required": [
+        "primary",
+        "primary_light",
+        "background",
+        "surface",
+        "text",
+        "muted",
+        "subtle",
+        "accent"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "content_width": {
+          "type": "string",
+          "pattern": "^[0-9]+(px|rem|em)$"
+        },
+        "section_spacing": {
+          "type": "string",
+          "pattern": "^[0-9]+(px|rem|em)$"
+        },
+        "card_radius": {
+          "type": "string",
+          "pattern": "^[0-9]+(px|rem|em)$"
+        },
+        "radius_md": {
+          "type": "string",
+          "pattern": "^[0-9]+(px|rem|em)$"
+        },
+        "radius_lg": {
+          "type": "string",
+          "pattern": "^[0-9]+(px|rem|em)$"
+        }
+      },
+      "required": [
+        "content_width",
+        "section_spacing",
+        "card_radius",
+        "radius_md",
+        "radius_lg"
+      ]
+    },
+    "typography": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading_font": {
+          "type": "string",
+          "enum": [
+            "cinzel",
+            "syne",
+            "inter",
+            "jakarta",
+            "system"
+          ]
+        },
+        "body_font": {
+          "type": "string",
+          "enum": [
+            "cinzel",
+            "syne",
+            "inter",
+            "jakarta",
+            "system"
+          ]
+        }
+      },
+      "required": [
+        "heading_font",
+        "body_font"
+      ]
+    },
+    "navigation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": [
+            "fixed-dark"
+          ],
+          "default": "fixed-dark"
+        }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": [
+            "columns"
+          ],
+          "default": "columns"
+        }
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "colors",
+    "layout",
+    "typography"
+  ]
+}

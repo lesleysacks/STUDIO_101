@@ -1,0 +1,26 @@
+<section>
+    <div class="container">
+        {% if data.heading %}
+            <div class="section-header">
+                {% if data.eyebrow %}<span class="badge">{{ data.eyebrow }}</span>{% endif %}
+                <h2>{{ data.heading }}</h2>
+                {% if data.intro %}<p>{{ data.intro }}</p>{% endif %}
+            </div>
+        {% endif %}
+        <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+            {% for item in data.items %}
+                <div class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-{{ section.id }}-{{ forloop.counter }}">
+                        <span>{{ item.question }}</span>
+                        <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer" id="faq-answer-{{ section.id }}-{{ forloop.counter }}">
+                        <p>{{ item.answer }}</p>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No questions have been published yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>

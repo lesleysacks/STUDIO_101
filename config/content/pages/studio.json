@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "slug": "studio",
+  "title": "Studio Specs & Gear",
+  "published": true,
+  "template": "standard",
+  "seo": {
+    "title": "Studio 101 Spaces and Equipment",
+    "description": "Acoustic soundproofing, Profoto strobes, cinema lights, and broadcast microphones."
+  },
+  "sections": [
+    {
+      "id": "studio-hero",
+      "type": "hero",
+      "enabled": true,
+      "settings": {
+        "variant": "page",
+        "eyebrow": "Facility Specs",
+        "heading": "Studio Spaces & Inventory",
+        "description": "Explore our acoustic soundproofing, Profoto strobes, ARRI cinema lights, and broadcast microphone suites."
+      }
+    },
+    {
+      "id": "studio-highlights",
+      "type": "feature_grid",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "The Facility",
+        "heading": "Built for Production Days",
+        "intro": "Spaces and hospitality designed around real shoot schedules.",
+        "items": [
+          {
+            "icon": "fa-sliders-h",
+            "title": "Acoustics & Lighting",
+            "text": "Features dark soundproofed suites with acoustic treatment, automated moving-head lighting trusses, and customizable color environments."
+          },
+          {
+            "icon": "fa-gem",
+            "title": "Luxury Hospitality",
+            "text": "Designed with rich burgundy velvet accents, private green rooms, makeup vanity stations, high-speed fiber internet, and client lounges."
+          },
+          {
+            "icon": "fa-video",
+            "title": "Multi-Set Versatility",
+            "text": "Transition seamlessly between clean white infinity cycloramas, green screen setups, podcast tables, and dynamic music video stages."
+          }
+        ]
+      }
+    },
+    {
+      "id": "studio-inventory",
+      "type": "studio_facilities",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Gear Inventory",
+        "heading": "Professional Production Equipment",
+        "intro": "High-end strobes, broadcast microphones, and lighting modifiers included with session bookings.",
+        "source": "available_spaces",
+        "equipment_heading": "Included Equipment",
+        "fallback_equipment": [
+          {
+            "title": "Lighting & Strobes",
+            "text": "Profoto B10X, Profoto D2 1000 Air, Aputure 600d Pro LED, RGB moving-head intelligent trusses.",
+            "category": "Lighting"
+          },
+          {
+            "title": "Broadcast Audio",
+            "text": "Shure SM7B microphones, Rodecaster Pro II audio mixer, acoustic soundproofing panels.",
+            "category": "Audio"
+          },
+          {
+            "title": "Camera Rigs & Support",
+            "text": "C-stands, heavy-duty booms, 4K multi-cam switcher, atmospheric haze machines.",
+            "category": "Grip"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking-cta",
+      "type": "cta",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Book Your Session",
+        "heading": "Ready to Elevate Your Next Project?",
+        "text": "Our signature standard package starts at R1,300.00 for 1 Hour 30 Mins of full studio access, professional gear, and dedicated support.",
+        "primary_cta": {
+          "label": "Book Now",
+          "href": "/book/"
+        },
+        "secondary_cta": {
+          "label": "View Packages & Rates",
+          "href": "/services/"
+        }
+      }
+    }
+  ]
+}

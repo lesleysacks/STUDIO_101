@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "slug": "portfolio",
+  "title": "Portfolio Showcase",
+  "published": true,
+  "template": "standard",
+  "seo": {
+    "title": "Studio 101 Portfolio",
+    "description": "Commercial projects, music video sets, and editorial portraits produced at Studio 101."
+  },
+  "sections": [
+    {
+      "id": "portfolio-hero",
+      "type": "hero",
+      "enabled": true,
+      "settings": {
+        "variant": "page",
+        "eyebrow": "Visual Excellence",
+        "heading": "Studio 101 Showcase",
+        "description": "Explore high-end commercial projects, music video sets, and editorial portraits produced in our studio."
+      }
+    },
+    {
+      "id": "portfolio-gallery",
+      "type": "portfolio_gallery",
+      "enabled": true,
+      "settings": {
+        "source": "published_projects",
+        "limit": 12,
+        "fallback_items": [
+          {
+            "title": "Main Studio Interior",
+            "summary": "Dark Moody Aesthetic",
+            "image": "ASSETS/IMAGES/hero_studio.png",
+            "alt": "Studio 101 main interior"
+          },
+          {
+            "title": "Photography Bay",
+            "summary": "Infinity Curve Cyclorama",
+            "image": "ASSETS/IMAGES/service_photography.png",
+            "alt": "Profoto lighting setup"
+          },
+          {
+            "title": "Podcast Suite",
+            "summary": "Acoustic Burgundy Panels",
+            "image": "ASSETS/IMAGES/service_podcast.png",
+            "alt": "Soundproof podcast suite"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking-cta",
+      "type": "cta",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Book Your Session",
+        "heading": "Ready to Elevate Your Next Project?",
+        "text": "Our signature standard package starts at R1,300.00 for 1 Hour 30 Mins of full studio access, professional gear, and dedicated support.",
+        "primary_cta": {
+          "label": "Book Now",
+          "href": "/book/"
+        },
+        "secondary_cta": {
+          "label": "View Packages & Rates",
+          "href": "/services/"
+        }
+      }
+    }
+  ]
+}

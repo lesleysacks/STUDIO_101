@@ -1,0 +1,27 @@
+{% load static %}
+{% if data.variant == "page" %}
+<header class="page-header">
+    <div class="container">
+        {% if data.eyebrow %}<span class="badge">{{ data.eyebrow }}</span>{% endif %}
+        <h1>{{ data.heading }}</h1>
+        {% if data.description %}<p>{{ data.description }}</p>{% endif %}
+    </div>
+</header>
+{% else %}
+<header class="hero"{% if data.image_url %} style="background-image: url('{{ data.image_url }}');"{% endif %}>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        {% if data.eyebrow %}<div class="hero-subbrand"><span>{{ data.eyebrow }}</span></div>{% endif %}
+        <h1 class="hero-title">{{ data.heading }}</h1>
+        {% if data.description %}<p class="hero-desc">{{ data.description }}</p>{% endif %}
+        <div class="hero-actions">
+            {% if data.primary_cta.label %}
+                <a href="{{ data.primary_cta.href }}" class="btn-primary">{{ data.primary_cta.label }}</a>
+            {% endif %}
+            {% if data.secondary_cta.label %}
+                <a href="{{ data.secondary_cta.href }}" class="btn-secondary">{{ data.secondary_cta.label }}</a>
+            {% endif %}
+        </div>
+    </div>
+</header>
+{% endif %}

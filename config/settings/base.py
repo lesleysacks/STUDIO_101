@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'apps.studio',
     'apps.bookings',
     'apps.streams',
+    'apps.siteconfig',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # STUDIO101 Custom SEO & Global Site Context Processor
                 'apps.core.context_processors.site_context',
+                'apps.siteconfig.context_processors.siteconfig_context',
             ],
         },
     },
@@ -95,3 +97,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Validated JSON site configuration. Content files live outside the Python package.
+SITECONFIG_ROOT = BASE_DIR / 'config' / 'content'

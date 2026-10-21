@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "slug": "about",
+  "title": "About Us",
+  "published": true,
+  "template": "standard",
+  "seo": {
+    "title": "About Studio 101",
+    "description": "Studio 101 is the commercial production evolution of Canwill-Smith Photography."
+  },
+  "sections": [
+    {
+      "id": "about-story",
+      "type": "text_image",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Our Story & Legacy",
+        "heading": "Engineered for Visual Perfection",
+        "paragraphs": [
+          "Studio 101 represents the commercial production evolution of Canwill-Smith Photography.",
+          "Built in 2026, Studio 101 was designed to eliminate the compromises found in standard rental spaces. From acoustics to lighting trusses and client amenities, every square foot is optimized for speed, luxury, and visual impact.",
+          "Whether hosting high-profile celebrity podcasts, commercial ad filming, or music video sets, our space delivers absolute control over lighting, sound, and mood."
+        ],
+        "image": "ASSETS/IMAGES/hero_studio.png",
+        "image_alt": "Studio 101 interior",
+        "cta_label": "Book Studio Visit",
+        "cta_href": "/book/",
+        "image_position": "right"
+      }
+    },
+    {
+      "id": "about-facility",
+      "type": "feature_grid",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "State-Of-The-Art Facility",
+        "heading": "Engineered for Elite Creators",
+        "intro": "Designed from the ground up to combine corporate luxury aesthetics with maximum production flexibility and high-tier equipment.",
+        "items": [
+          {
+            "icon": "fa-sliders-h",
+            "title": "Acoustics & Lighting",
+            "text": "Features dark soundproofed suites with acoustic treatment, automated moving-head lighting trusses, and customizable color environments."
+          },
+          {
+            "icon": "fa-gem",
+            "title": "Luxury Hospitality",
+            "text": "Designed with rich burgundy velvet accents, private green rooms, makeup vanity stations, high-speed fiber internet, and client lounges."
+          },
+          {
+            "icon": "fa-video",
+            "title": "Multi-Set Versatility",
+            "text": "Transition seamlessly between clean white infinity cycloramas, green screen setups, podcast tables, and dynamic music video stages."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking-cta",
+      "type": "cta",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Book Your Session",
+        "heading": "Ready to Elevate Your Next Project?",
+        "text": "Our signature standard package starts at R1,300.00 for 1 Hour 30 Mins of full studio access, professional gear, and dedicated support.",
+        "primary_cta": {
+          "label": "Book Now",
+          "href": "/book/"
+        },
+        "secondary_cta": {
+          "label": "View Packages & Rates",
+          "href": "/services/"
+        }
+      }
+    }
+  ]
+}

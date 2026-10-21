@@ -2,6 +2,20 @@ from django import forms
 from .models import BookingRequest
 
 class BookingRequestForm(forms.ModelForm):
+    honeypot = forms.CharField(
+        required=False,
+        label="Leave this field empty",
+        widget=forms.TextInput(
+            attrs={"autocomplete": "off", "tabindex": "-1", "aria-hidden": "true"}
+        ),
+    )
+
+    def clean_honeypot(self):
+        value = self.cleaned_data.get("honeypot", "")
+        if value:
+            raise forms.ValidationError("Invalid submission.")
+        return ""
+
     class Meta:
         model = BookingRequest
         fields = [

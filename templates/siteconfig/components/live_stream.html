@@ -1,0 +1,24 @@
+<section class="live-stream-section" style="background: var(--bg-surface); border-top: 1px solid var(--border-burgundy); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+        <div class="section-header">
+            {% if data.stream and data.stream.is_live %}
+                <span class="badge">Live broadcast</span>
+                <h2>{{ data.stream.title }}</h2>
+                <p>{{ data.stream.description|default:data.intro }}</p>
+            {% elif data.stream and data.stream.scheduled_at %}
+                <span class="badge">Upcoming stream</span>
+                <h2>{{ data.stream.title }}</h2>
+                <p>Scheduled broadcast: {{ data.stream.scheduled_at|date:"F j, Y - H:i T" }}</p>
+            {% else %}
+                {% if data.eyebrow %}<span class="badge">{{ data.eyebrow }}</span>{% endif %}
+                <h2>{{ data.heading }}</h2>
+                {% if data.intro %}<p>{{ data.intro }}</p>{% endif %}
+            {% endif %}
+        </div>
+        {% if data.stream and data.stream.embed_url %}
+            <div class="video-container" style="position: relative; max-width: 960px; margin: 0 auto; aspect-ratio: 16 / 9;">
+                <iframe src="{{ data.stream.embed_url }}" title="{{ data.stream.title }}" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        {% endif %}
+    </div>
+</section>

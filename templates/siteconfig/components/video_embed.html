@@ -1,0 +1,15 @@
+<section>
+    <div class="container">
+        <div class="section-header">
+            <h2>{{ data.heading }}</h2>
+            {% if data.intro %}<p>{{ data.intro }}</p>{% endif %}
+        </div>
+        {% if data.embed_url %}
+            <div class="video-container" style="position: relative; max-width: 960px; margin: 0 auto; aspect-ratio: 16 / 9;">
+                <iframe src="{{ data.embed_url }}" title="{{ data.title }}" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        {% else %}
+            <p>This video is unavailable.</p>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,11 @@
+<section>
+    <div class="container" style="text-align: center;">
+        {% if data.heading %}<h2>{{ data.heading }}</h2>{% endif %}
+        {% if data.image_url %}
+            <img src="{{ data.image_url }}" alt="{{ data.image_alt }}" style="max-width: 100%; border-radius: var(--radius-sm);">
+        {% else %}
+            <p>{{ data.image_alt }}</p>
+        {% endif %}
+        {% if data.caption %}<p>{{ data.caption }}</p>{% endif %}
+    </div>
+</section>

@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="{% static 'css/variables.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% if site_theme_css %}<style id="site-theme">{{ site_theme_css|safe }}</style>{% endif %}
     
     {% block extra_css %}{% endblock %}
 </head>

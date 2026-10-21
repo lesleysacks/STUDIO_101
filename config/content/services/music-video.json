@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "slug": "music-video",
+  "name": "Music & Ad Productions",
+  "summary": "Expansive industrial studio stage with atmospheric smoke, intelligent moving lights, and cinema camera setups.",
+  "description": "Expansive industrial studio stage with atmospheric smoke, intelligent moving lights, and cinema camera setups.",
+  "category": {
+    "slug": "music-and-ads",
+    "name": "Music and Ads"
+  },
+  "featured_image": "ASSETS/IMAGES/service_music.png",
+  "image_alt": "Music & Ad Productions",
+  "starting_price": 3800,
+  "price_label": "From R3800",
+  "price_unit": "per session",
+  "duration_label": "By arrangement",
+  "features": [
+    {
+      "title": "Moving-head lighting"
+    },
+    {
+      "title": "Atmospheric smoke"
+    },
+    {
+      "title": "Cinema camera support"
+    }
+  ],
+  "cta_label": "Book This Service",
+  "cta_href": "/book/",
+  "seo": {
+    "title": "Music & Ad Productions | Studio 101",
+    "description": "Expansive industrial studio stage with atmospheric smoke, intelligent moving lights, and cinema camera setups."
+  },
+  "order": 3,
+  "is_featured": true,
+  "published": true
+}
