@@ -1,0 +1,77 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "variant": {
+      "type": "string",
+      "enum": [
+        "banner",
+        "page"
+      ],
+      "default": "banner"
+    },
+    "eyebrow": {
+      "type": "string",
+      "maxLength": 120,
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 800,
+      "default": ""
+    },
+    "alignment": {
+      "type": "string",
+      "enum": [
+        "left",
+        "center"
+      ],
+      "default": "left"
+    },
+    "image": {
+      "type": "string",
+      "maxLength": 200,
+      "default": ""
+    },
+    "image_alt": {
+      "type": "string",
+      "maxLength": 200,
+      "default": ""
+    },
+    "primary_cta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "href": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    },
+    "secondary_cta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "href": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    }
+  },
+  "required": [
+    "heading"
+  ]
+}

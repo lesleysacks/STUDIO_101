@@ -1,0 +1,22 @@
+<section>
+    <div class="container">
+        <div class="grid-2">
+            {% if data.image_position == "left" and data.image_url %}
+                <div><img src="{{ data.image_url }}" alt="{{ data.image_alt }}" style="border-radius: var(--radius-sm); border: 1px solid var(--border-burgundy);"></div>
+            {% endif %}
+            <div>
+                {% if data.eyebrow %}<span class="badge">{{ data.eyebrow }}</span>{% endif %}
+                <h2 style="font-size: 34px; margin-bottom: 20px;">{{ data.heading }}</h2>
+                {% for paragraph in data.paragraphs %}
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">{{ paragraph }}</p>
+                {% endfor %}
+                {% if data.cta_label and data.cta_href %}
+                    <a href="{{ data.cta_href }}" class="btn-primary">{{ data.cta_label }}</a>
+                {% endif %}
+            </div>
+            {% if data.image_position != "left" and data.image_url %}
+                <div><img src="{{ data.image_url }}" alt="{{ data.image_alt }}" style="border-radius: var(--radius-sm); border: 1px solid var(--border-burgundy);"></div>
+            {% endif %}
+        </div>
+    </div>
+</section>

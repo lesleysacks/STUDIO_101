@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "eyebrow": {
+      "type": "string",
+      "maxLength": 120,
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "maxLength": 200,
+      "default": ""
+    },
+    "intro": {
+      "type": "string",
+      "maxLength": 400,
+      "default": ""
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "published_faqs"
+      ],
+      "default": "published_faqs"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "question": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "answer": {
+            "type": "string",
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "question",
+          "answer"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "slug": "home",
+  "title": "Studio 101",
+  "published": true,
+  "template": "standard",
+  "seo": {
+    "title": "STUDIO 101 | Luxury Creative Production Studio",
+    "description": "An ultra-premium luxury facility for photography, music video sets, podcast recordings, and commercial advertisement productions."
+  },
+  "sections": [
+    {
+      "id": "home-hero",
+      "type": "hero",
+      "enabled": true,
+      "settings": {
+        "variant": "banner",
+        "eyebrow": "Canwill-Smith Photography Presents",
+        "heading": "The New Face of Creative Space",
+        "description": "An ultra-premium luxury facility engineered for high-end photography, dynamic music video sets, soundproof podcast recordings, and corporate advertisement productions.",
+        "alignment": "left",
+        "image": "ASSETS/IMAGES/hero_studio.png",
+        "image_alt": "Studio 101 interior",
+        "primary_cta": {
+          "label": "Explore Facilities",
+          "href": "/services/"
+        },
+        "secondary_cta": {
+          "label": "Reserve Session",
+          "href": "/book/"
+        }
+      }
+    },
+    {
+      "id": "home-stream",
+      "type": "live_stream",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Live Production Studio",
+        "heading": "Studio 101 Broadcast Center",
+        "intro": "Ultra-low latency live streaming, multi-cam switching, and corporate broadcast hub.",
+        "source": "active_stream"
+      }
+    },
+    {
+      "id": "home-facility",
+      "type": "feature_grid",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "State-Of-The-Art Facility",
+        "heading": "Engineered for Elite Creators",
+        "intro": "Designed from the ground up to combine corporate luxury aesthetics with maximum production flexibility and high-tier equipment.",
+        "items": [
+          {
+            "icon": "fa-sliders-h",
+            "title": "Acoustics & Lighting",
+            "text": "Features dark soundproofed suites with acoustic treatment, automated moving-head lighting trusses, and customizable color environments."
+          },
+          {
+            "icon": "fa-gem",
+            "title": "Luxury Hospitality",
+            "text": "Designed with rich burgundy velvet accents, private green rooms, makeup vanity stations, high-speed fiber internet, and client lounges."
+          },
+          {
+            "icon": "fa-video",
+            "title": "Multi-Set Versatility",
+            "text": "Transition seamlessly between clean white infinity cycloramas, green screen setups, podcast tables, and dynamic music video stages."
+          }
+        ]
+      }
+    },
+    {
+      "id": "home-services",
+      "type": "service_grid",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Explore Studio 101",
+        "heading": "Tailored Production Hubs",
+        "intro": "Browse our specialized facilities built for commercial photography, podcasts, content creators, and broadcast videos.",
+        "source": "featured_services",
+        "columns": 3,
+        "limit": 3
+      }
+    },
+    {
+      "id": "home-portfolio",
+      "type": "portfolio_gallery",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Visual Portfolio",
+        "heading": "Inside Studio 101",
+        "intro": "Click on any image to launch our immersive burgundy-rimmed lightbox viewer.",
+        "source": "featured_projects",
+        "limit": 6,
+        "fallback_items": [
+          {
+            "title": "Main Studio Interior",
+            "summary": "Dark Moody Aesthetic",
+            "caption": "Studio 101 Main Interior & Lighting Array",
+            "image": "ASSETS/IMAGES/hero_studio.png",
+            "alt": "Studio 101 main interior"
+          },
+          {
+            "title": "Photography Bay",
+            "summary": "Infinity Curve Cyclorama",
+            "caption": "Profoto Lighting & Camera Rig Setup",
+            "image": "ASSETS/IMAGES/service_photography.png",
+            "alt": "Profoto lighting setup"
+          },
+          {
+            "title": "Podcast Suite",
+            "summary": "Acoustic Burgundy Panels",
+            "caption": "Multi-Cam Soundproof Podcast Suite",
+            "image": "ASSETS/IMAGES/service_podcast.png",
+            "alt": "Soundproof podcast suite"
+          },
+          {
+            "title": "Creator Set",
+            "summary": "TikTok & Reels Ready",
+            "caption": "Modern Social Media Content Creator Corner",
+            "image": "ASSETS/IMAGES/service_creator.png",
+            "alt": "Content creator studio set"
+          },
+          {
+            "title": "Music Stage",
+            "summary": "Atmospheric Smoke & RGB",
+            "caption": "Music Video Stage with Intelligent Moving Head Lights",
+            "image": "ASSETS/IMAGES/service_music.png",
+            "alt": "Music video stage"
+          },
+          {
+            "title": "Commercial Film Set",
+            "summary": "RED / ARRI Cinema Rigs",
+            "caption": "Commercial Cinema Rig & Green Screen Setup",
+            "image": "ASSETS/IMAGES/service_ad.png",
+            "alt": "Commercial ad film set"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking-cta",
+      "type": "cta",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Book Your Session",
+        "heading": "Ready to Elevate Your Next Project?",
+        "text": "Our signature standard package starts at R1,300.00 for 1 Hour 30 Mins of full studio access, professional gear, and dedicated support.",
+        "primary_cta": {
+          "label": "Book Now",
+          "href": "/book/"
+        },
+        "secondary_cta": {
+          "label": "View Packages & Rates",
+          "href": "/services/"
+        }
+      }
+    }
+  ]
+}

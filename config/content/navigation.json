@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "style": "fixed-dark",
+  "logo": {
+    "primary": "STUDIO",
+    "accent": "101",
+    "href": "/"
+  },
+  "items": [
+    {
+      "id": "home",
+      "label": "Home",
+      "href": "/",
+      "style": "link"
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "href": "/about/",
+      "style": "link"
+    },
+    {
+      "id": "services",
+      "label": "Services",
+      "href": "/services/",
+      "style": "link"
+    },
+    {
+      "id": "portfolio",
+      "label": "Portfolio",
+      "href": "/portfolio/",
+      "style": "link"
+    },
+    {
+      "id": "studio",
+      "label": "Studio Space",
+      "href": "/studio/",
+      "style": "link"
+    },
+    {
+      "id": "streams",
+      "label": "Live Stream",
+      "href": "/streams/",
+      "style": "link"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ",
+      "href": "/faq/",
+      "style": "link"
+    },
+    {
+      "id": "book",
+      "label": "Book Now",
+      "href": "/book/",
+      "style": "cta"
+    }
+  ],
+  "footer": {
+    "blurb": "The commercial production evolution of Canwill-Smith Photography. Ultra-premium facilities for elite visual storytelling.",
+    "legal": "© 2026 Studio 101. Powered by Canwill-Smith Photography. All Rights Reserved.",
+    "note": "Designed for Corporate Luxury & High-End Production.",
+    "columns": [
+      {
+        "id": "explore",
+        "title": "Navigation",
+        "links": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "About Studio 101",
+            "href": "/about/"
+          },
+          {
+            "label": "Services",
+            "href": "/services/"
+          },
+          {
+            "label": "Portfolio",
+            "href": "/portfolio/"
+          },
+          {
+            "label": "Frequently Asked",
+            "href": "/faq/"
+          }
+        ]
+      },
+      {
+        "id": "services",
+        "title": "Services",
+        "links": [
+          {
+            "label": "Photography Studio Hire",
+            "href": "/services/photography/"
+          },
+          {
+            "label": "Podcast Shooting Suite",
+            "href": "/services/podcast/"
+          },
+          {
+            "label": "Music Video Stage",
+            "href": "/services/music-video/"
+          },
+          {
+            "label": "Studio Hire",
+            "href": "/services/studio-hire/"
+          },
+          {
+            "label": "Short Film",
+            "href": "/services/short-film/"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+<section style="background: var(--bg-card); border-top: 1px solid var(--border-color);">
+    <div class="container">
+        <div class="section-header">
+            {% if data.eyebrow %}<span class="badge">{{ data.eyebrow }}</span>{% endif %}
+            <h2>{{ data.heading }}</h2>
+            {% if data.intro %}<p>{{ data.intro }}</p>{% endif %}
+        </div>
+        {% if data.spaces %}
+            <div class="grid-2" style="margin-bottom: 40px;">
+                {% for space in data.spaces %}
+                    <article class="card">
+                        <h3>{{ space.title }}</h3>
+                        {% if space.meta %}<p>{{ space.meta }}</p>{% endif %}
+                        <p>{{ space.text }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if data.equipment_heading %}<h3 style="margin-bottom: 20px;">{{ data.equipment_heading }}</h3>{% endif %}
+        <div class="grid-3">
+            {% for item in data.equipment %}
+                <article class="card">
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.text }}</p>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

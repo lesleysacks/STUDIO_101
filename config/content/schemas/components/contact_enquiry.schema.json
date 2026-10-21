@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "eyebrow": {
+      "type": "string",
+      "maxLength": 120,
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "intro": {
+      "type": "string",
+      "maxLength": 400,
+      "default": ""
+    },
+    "hours": {
+      "type": "string",
+      "maxLength": 300,
+      "default": ""
+    }
+  },
+  "required": [
+    "heading"
+  ]
+}

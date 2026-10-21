@@ -1,0 +1,30 @@
+<section>
+    <div class="container">
+        {% if data.heading %}
+            <div class="section-header">
+                {% if data.eyebrow %}<span class="badge">{{ data.eyebrow }}</span>{% endif %}
+                <h2>{{ data.heading }}</h2>
+                {% if data.intro %}<p>{{ data.intro }}</p>{% endif %}
+            </div>
+        {% endif %}
+        <div class="{% if data.columns == 2 %}grid-2{% else %}grid-3{% endif %}">
+            {% for item in data.items %}
+                <article class="service-card">
+                    {% if item.image_url %}
+                        <div class="service-img-wrapper">
+                            <img src="{{ item.image_url }}" alt="{{ item.alt }}">
+                            {% if item.category %}<div class="service-badge-overlay">{{ item.category }}</div>{% endif %}
+                        </div>
+                    {% endif %}
+                    <div class="service-content">
+                        <h3>{{ item.title }}</h3>
+                        {% if item.summary %}<p>{{ item.summary }}</p>{% endif %}
+                        {% if item.href %}<a href="{{ item.href }}" class="btn-secondary" style="width: 100%;">View Details</a>{% endif %}
+                    </div>
+                </article>
+            {% empty %}
+                <p>No services are published yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,6 +1,4 @@
 from django.contrib.sitemaps.views import sitemap
-from django.contrib.sitemaps import GenericSitemap
-from apps.bookings.models import BookingRequest
 
 from django.contrib import admin
 from django.urls import path, include
@@ -15,14 +13,11 @@ sitemaps = {
     'services': ServiceSitemap,
     'portfolio': ProjectSitemap,
     'streams': StreamSitemap,
-    'bookings': GenericSitemap({
-        "queryset": BookingRequest.objects.all(),
-        "date_field": "created_at",
-    }, priority=0.6),
 }
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('apps.siteconfig.urls')),
     path('', include('apps.core.urls')),
     path('services/', include('apps.services.urls', namespace='services')),
     path('portfolio/', include('apps.portfolio.urls', namespace='portfolio')),

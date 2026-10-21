@@ -25,6 +25,7 @@
         <div style="background: var(--bg-card); border: 1px solid var(--border-burgundy); border-radius: var(--radius-sm); padding: 40px; box-shadow: var(--shadow-cinematic);">
             <form method="post" id="studio-booking-form">
                 {% csrf_token %}
+                <div class="hp-field" style="position: absolute; left: -9999px;" aria-hidden="true">{{ form.honeypot }}</div>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
                     <div>
                         <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 13px;">Full Name *</label>

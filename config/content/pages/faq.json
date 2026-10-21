@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "slug": "faq",
+  "title": "FAQ",
+  "published": true,
+  "template": "standard",
+  "seo": {
+    "title": "Studio 101 FAQ",
+    "description": "Answers about booking, gear rental, soundproofing, and studio access."
+  },
+  "sections": [
+    {
+      "id": "faq-hero",
+      "type": "hero",
+      "enabled": true,
+      "settings": {
+        "variant": "page",
+        "eyebrow": "Common Questions",
+        "heading": "Frequently Asked Questions",
+        "description": "Everything you need to know about booking, gear rental, soundproofing, and studio access."
+      }
+    },
+    {
+      "id": "faq-list",
+      "type": "faq",
+      "enabled": true,
+      "settings": {
+        "source": "published_faqs",
+        "items": [
+          {
+            "question": "What equipment is included in the standard studio hire?",
+            "answer": "Standard hire includes complete access to our Profoto strobes, softboxes, background C-stands, client makeup vanity, and high-speed fiber Wi-Fi."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking-cta",
+      "type": "cta",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Book Your Session",
+        "heading": "Ready to Elevate Your Next Project?",
+        "text": "Our signature standard package starts at R1,300.00 for 1 Hour 30 Mins of full studio access, professional gear, and dedicated support.",
+        "primary_cta": {
+          "label": "Book Now",
+          "href": "/book/"
+        },
+        "secondary_cta": {
+          "label": "View Packages & Rates",
+          "href": "/services/"
+        }
+      }
+    }
+  ]
+}

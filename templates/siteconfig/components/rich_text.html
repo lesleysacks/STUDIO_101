@@ -1,0 +1,8 @@
+<section>
+    <div class="container" style="max-width: 800px;">
+        {% if data.heading %}<h2>{{ data.heading }}</h2>{% endif %}
+        {% for paragraph in data.paragraphs %}
+            <p style="color: var(--text-muted);">{{ paragraph }}</p>
+        {% endfor %}
+    </div>
+</section>

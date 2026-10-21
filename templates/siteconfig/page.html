@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_title %}{{ page_title }}{% endblock %}
+{% block twitter_title %}{{ page_title }}{% endblock %}
+{% block twitter_description %}{{ page_description }}{% endblock %}
+
+{% block content %}
+{% for section in sections %}
+    {% include section.template with data=section.data %}
+{% endfor %}
+{% endblock %}

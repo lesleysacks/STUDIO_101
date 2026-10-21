@@ -32,7 +32,8 @@ class CoreViewTests(TestCase):
     def test_home_view_status_code(self):
         response = self.client.get(reverse('core:home'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'pages/home.html')
+        self.assertContains(response, "The New Face of Creative Space")
+        self.assertTemplateUsed(response, "siteconfig/page.html")
 
     def test_about_view_status_code(self):
         response = self.client.get(reverse('core:about'))
@@ -50,6 +51,7 @@ class CoreViewTests(TestCase):
         response = self.client.get('/sitemap.xml')
         self.assertEqual(response.status_code, 200)
         self.assertIn("xml", response.headers.get("Content-Type", ""))
+        self.assertIn("/services/photography/", response.content.decode())
 
     def test_robots_txt_status_code(self):
         response = self.client.get('/robots.txt')

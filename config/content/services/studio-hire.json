@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "slug": "studio-hire",
+  "name": "Studio Hire",
+  "summary": "Full studio access for a 1 hour 30 minute session, including equipment, client vanity, and fiber internet.",
+  "description": "Full studio access for a 1 hour 30 minute session, including equipment, client vanity, and fiber internet.",
+  "category": {
+    "slug": "studio-hire",
+    "name": "Studio Hire"
+  },
+  "featured_image": "ASSETS/IMAGES/hero_studio.png",
+  "image_alt": "Studio Hire",
+  "starting_price": 1300,
+  "price_label": "From R1300",
+  "price_unit": "per session",
+  "duration_label": "1 Hour 30 Mins",
+  "features": [
+    {
+      "title": "1 hour 30 minutes"
+    },
+    {
+      "title": "Equipment included"
+    },
+    {
+      "title": "Client lounge"
+    }
+  ],
+  "cta_label": "Book This Service",
+  "cta_href": "/book/",
+  "seo": {
+    "title": "Studio Hire | Studio 101",
+    "description": "Full studio access for a 1 hour 30 minute session, including equipment, client vanity, and fiber internet."
+  },
+  "order": 4,
+  "is_featured": false,
+  "published": true
+}
