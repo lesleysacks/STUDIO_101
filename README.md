@@ -79,6 +79,16 @@ Bash
 python manage.py runserver
 Navigate to http://127.0.0.1:8000/ in your web browser. Access the admin dashboard at http://127.0.0.1:8000/admin/.
 
+## JSON customization
+
+Page sections, navigation, theme tokens, and the service catalog are edited in `config/content/`. Validate before deploying:
+
+```bash
+python manage.py validate_site_config --strict
+```
+
+See `docs/json-platform.md` for the file map, precedence rules, import/export commands, and rollback steps. Database records still win when a service or project slug exists in the admin.
+
 📺 Managing Live Streams
 To display a live stream on the frontend:
 

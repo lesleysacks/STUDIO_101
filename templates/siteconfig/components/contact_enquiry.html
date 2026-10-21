@@ -1,0 +1,37 @@
+<section>
+    <div class="container">
+        <div class="grid-2">
+            <div>
+                {% if data.eyebrow %}<span class="badge">{{ data.eyebrow }}</span>{% endif %}
+                <h2 style="font-size: 32px; margin-bottom: 24px;">{{ data.heading }}</h2>
+                {% if data.intro %}<p style="color: var(--text-muted);">{{ data.intro }}</p>{% endif %}
+                <div style="margin: 24px 0; line-height: 2;">
+                    <p>Email: <a href="mailto:{{ data.email }}">{{ data.email }}</a></p>
+                    <p>Phone: {{ data.phone }}</p>
+                    <p>Address: {{ data.address }}</p>
+                </div>
+                {% if data.hours %}
+                    <div style="background: var(--bg-card); padding: 24px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                        <h3 style="margin-bottom: 8px;">Operating Hours</h3>
+                        <p style="color: var(--text-muted);">{{ data.hours }}</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div>
+                <form method="post" action="{% url 'bookings:request' %}" style="background: var(--bg-card); border: 1px solid var(--border-burgundy); border-radius: var(--radius-sm); padding: 36px;">
+                    {% csrf_token %}
+                    <h3 style="font-size: 22px; margin-bottom: 20px;">Send a Message</h3>
+                    <div class="hp-field" style="position: absolute; left: -9999px;" aria-hidden="true">
+                        <label for="{{ data.form.honeypot.id_for_label }}">Leave this field empty</label>
+                        {{ data.form.honeypot }}
+                    </div>
+                    <div style="margin-bottom: 16px;"><label for="name">Full name</label>{{ data.form.full_name }}</div>
+                    <div style="margin-bottom: 16px;"><label for="email">Email</label>{{ data.form.email }}</div>
+                    <div style="margin-bottom: 16px;"><label for="phone">Phone</label>{{ data.form.phone }}</div>
+                    <div style="margin-bottom: 16px;"><label for="message">Project details</label>{{ data.form.project_details }}</div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Submit enquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

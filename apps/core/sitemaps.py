@@ -2,11 +2,23 @@
 Sitemap generators for STUDIO101 public views and dynamic database entries.
 """
 
+from types import SimpleNamespace
+
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
 from apps.services.models import Service
 from apps.portfolio.models import Project
 from apps.streams.models import LiveStream
+from apps.siteconfig.services.errors import ConfigError
+from apps.siteconfig.services.loader import get_bundle
+
+
+def _json_only(records, existing_slugs):
+    extras = []
+    for slug, entry in records.items():
+        if slug not in existing_slugs and entry.get("published", True):
+            extras.append(SimpleNamespace(slug=slug))
+    return extras
 
 
 class StaticViewSitemap(Sitemap):
@@ -37,7 +49,12 @@ class ServiceSitemap(Sitemap):
     changefreq = 'monthly'
 
     def items(self):
-        return Service.objects.all()
+        rows = list(Service.objects.all())
+        try:
+            bundle = get_bundle()
+        except ConfigError:
+            return rows
+        return rows + _json_only(bundle.services, {row.slug for row in rows})
 
     def location(self, item):
         return reverse('services:detail', kwargs={'slug': item.slug})
@@ -49,7 +66,12 @@ class ProjectSitemap(Sitemap):
     changefreq = 'monthly'
 
     def items(self):
-        return Project.objects.filter(is_published=True)
+        rows = list(Project.objects.filter(is_published=True))
+        try:
+            bundle = get_bundle()
+        except ConfigError:
+            return rows
+        return rows + _json_only(bundle.portfolio, {row.slug for row in rows})
 
     def location(self, item):
         return reverse('portfolio:detail', kwargs={'slug': item.slug})

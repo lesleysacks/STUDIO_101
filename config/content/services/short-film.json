@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "slug": "short-film",
+  "name": "Short Film Production",
+  "summary": "A full-day facility lockout for narrative and commercial films, with cinema lighting, green room, and production support.",
+  "description": "A full-day facility lockout for narrative and commercial films, with cinema lighting, green room, and production support.",
+  "category": {
+    "slug": "short-film",
+    "name": "Short Film"
+  },
+  "featured_image": "ASSETS/IMAGES/service_ad.png",
+  "image_alt": "Short Film Production",
+  "starting_price": 8500,
+  "price_label": "From R8500",
+  "price_unit": "per session",
+  "duration_label": "By arrangement",
+  "features": [
+    {
+      "title": "Full-day lockout"
+    },
+    {
+      "title": "Green room"
+    },
+    {
+      "title": "Production support"
+    }
+  ],
+  "cta_label": "Book This Service",
+  "cta_href": "/book/",
+  "seo": {
+    "title": "Short Film Production | Studio 101",
+    "description": "A full-day facility lockout for narrative and commercial films, with cinema lighting, green room, and production support."
+  },
+  "order": 5,
+  "is_featured": false,
+  "published": true
+}

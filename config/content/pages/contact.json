@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "contact",
+  "title": "Contact Us",
+  "published": true,
+  "template": "standard",
+  "seo": {
+    "title": "Contact Studio 101",
+    "description": "Book a session or ask about studio hire, equipment, and production support."
+  },
+  "sections": [
+    {
+      "id": "contact-hero",
+      "type": "hero",
+      "enabled": true,
+      "settings": {
+        "variant": "page",
+        "eyebrow": "Get In Touch",
+        "heading": "Contact Studio 101",
+        "description": "Our team responds within 2 hours during normal operating hours."
+      }
+    },
+    {
+      "id": "contact-form",
+      "type": "contact_enquiry",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Direct Inquiries",
+        "heading": "Visit or Reach Out",
+        "intro": "Send a session enquiry and the studio team will follow up.",
+        "hours": "Monday – Saturday: 07:00 AM – 10:00 PM. Sunday: available for full-day commercial lockouts."
+      }
+    }
+  ]
+}

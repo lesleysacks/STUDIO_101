@@ -27,12 +27,23 @@
                 <div style="color: var(--text-muted); line-height: 1.8; margin-bottom: 24px;">
                     {{ service.full_description|linebreaks }}
                 </div>
+                {% if features %}
+                    <ul style="color: var(--text-muted); line-height: 1.8; margin-bottom: 24px;">
+                        {% for feature in features %}
+                            <li>{{ feature.title }}{% if feature.description %} — {{ feature.description }}{% endif %}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 {% if service.starting_price %}
                     <div style="font-size: 24px; font-weight: 700; color: var(--primary-light); margin-bottom: 24px;">
                         Starting from R{{ service.starting_price }} <span style="font-size: 14px; color: var(--text-muted);">({{ service.duration_label }})</span>
                     </div>
                 {% endif %}
-                <a href="{% url 'bookings:request' %}" class="btn-primary">Book This Service</a>
+                {% if service.cta_href %}
+                    <a href="{{ service.cta_href }}" class="btn-primary">{{ service.cta_label|default:"Book This Service" }}</a>
+                {% else %}
+                    <a href="{% url 'bookings:request' %}" class="btn-primary">Book This Service</a>
+                {% endif %}
             </div>
         </div>
     </div>

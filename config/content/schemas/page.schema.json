@@ -1,0 +1,105 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "published": {
+      "type": "boolean",
+      "default": true
+    },
+    "template": {
+      "type": "string",
+      "enum": [
+        "standard"
+      ],
+      "default": "standard"
+    },
+    "seo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 300
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ]
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "hero",
+              "rich_text",
+              "text_image",
+              "feature_grid",
+              "service_grid",
+              "portfolio_gallery",
+              "video_embed",
+              "pricing",
+              "faq",
+              "cta",
+              "contact_enquiry",
+              "booking_enquiry",
+              "studio_facilities",
+              "live_stream",
+              "image_banner"
+            ]
+          },
+          "enabled": {
+            "type": "boolean",
+            "default": true
+          },
+          "settings": {
+            "type": "object",
+            "default": {}
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "slug",
+    "title",
+    "seo",
+    "sections"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "slug": "services",
+  "title": "Services & Rates",
+  "published": true,
+  "template": "standard",
+  "seo": {
+    "title": "Studio 101 Services",
+    "description": "Explore studio hire, photography, podcast, music video, and short-film production services."
+  },
+  "sections": [
+    {
+      "id": "services-hero",
+      "type": "hero",
+      "enabled": true,
+      "settings": {
+        "variant": "page",
+        "eyebrow": "Production Offerings",
+        "heading": "Studio Services & Packages",
+        "description": "Ultra-premium studio spaces and production packages engineered for creators, brands, and agencies."
+      }
+    },
+    {
+      "id": "services-grid",
+      "type": "service_grid",
+      "enabled": true,
+      "settings": {
+        "source": "published_services",
+        "columns": 3,
+        "limit": 12
+      }
+    },
+    {
+      "id": "services-pricing",
+      "type": "pricing",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Standard Rates",
+        "heading": "Transparent Pricing Tiers",
+        "intro": "Every session includes full equipment access, client vanity access, and high-speed fiber Wi-Fi.",
+        "plans": [
+          {
+            "id": "express",
+            "subtitle": "Standard Hire",
+            "title": "Studio Express",
+            "amount": "R1,300",
+            "duration": "1 Hour 30 Mins Access",
+            "featured": false,
+            "features": [
+              "Full Infinity Cyclorama Access",
+              "2x Profoto Strobe Lights",
+              "Private Makeup & Dressing Room",
+              "High-Speed Fiber Internet"
+            ],
+            "cta_label": "Reserve Express",
+            "cta_href": "/book/"
+          },
+          {
+            "id": "pro",
+            "subtitle": "Half Day Session",
+            "title": "Pro Creator",
+            "amount": "R3,800",
+            "duration": "4 Hours Full Access",
+            "featured": true,
+            "badge": "Most Popular",
+            "features": [
+              "Full Infinity & Podcast Suite",
+              "4x Profoto Strobes + RGB Trusses",
+              "Shure SM7B Broadcast Mics",
+              "Dedicated Studio Assistant"
+            ],
+            "cta_label": "Reserve Pro",
+            "cta_href": "/book/"
+          },
+          {
+            "id": "commercial",
+            "subtitle": "Full Day Block",
+            "title": "Commercial Film",
+            "amount": "R8,500",
+            "duration": "10 Hours Unlimited Access",
+            "featured": false,
+            "features": [
+              "Complete Studio 101 Facility Lockout",
+              "Cinema Camera Rigs & Atmospheric Smoke",
+              "Green Room & Catering Lounge",
+              "Full Production Support Team"
+            ],
+            "cta_label": "Reserve Day Lockout",
+            "cta_href": "/book/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking-cta",
+      "type": "cta",
+      "enabled": true,
+      "settings": {
+        "eyebrow": "Book Your Session",
+        "heading": "Ready to Elevate Your Next Project?",
+        "text": "Our signature standard package starts at R1,300.00 for 1 Hour 30 Mins of full studio access, professional gear, and dedicated support.",
+        "primary_cta": {
+          "label": "Book Now",
+          "href": "/book/"
+        },
+        "secondary_cta": {
+          "label": "View Packages & Rates",
+          "href": "/services/"
+        }
+      }
+    }
+  ]
+}

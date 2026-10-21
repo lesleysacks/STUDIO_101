@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "slug": "photography",
+  "name": "Studio Photography",
+  "summary": "High-end studio space equipped with Profoto strobes, large softboxes, and clean white infinity curve walls.",
+  "description": "High-end studio space equipped with Profoto strobes, large softboxes, and clean white infinity curve walls.",
+  "category": {
+    "slug": "photography",
+    "name": "Photography"
+  },
+  "featured_image": "ASSETS/IMAGES/service_photography.png",
+  "image_alt": "Studio Photography",
+  "starting_price": 1300,
+  "price_label": "From R1300",
+  "price_unit": "per session",
+  "duration_label": "1 Hour 30 Mins",
+  "features": [
+    {
+      "title": "Profoto strobe lighting"
+    },
+    {
+      "title": "Infinity cyclorama"
+    },
+    {
+      "title": "Private dressing room"
+    }
+  ],
+  "cta_label": "Book This Service",
+  "cta_href": "/book/",
+  "seo": {
+    "title": "Studio Photography | Studio 101",
+    "description": "High-end studio space equipped with Profoto strobes, large softboxes, and clean white infinity curve walls."
+  },
+  "order": 1,
+  "is_featured": true,
+  "published": true
+}

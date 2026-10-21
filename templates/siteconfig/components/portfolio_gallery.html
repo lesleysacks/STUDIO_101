@@ -1,0 +1,24 @@
+<section>
+    <div class="container">
+        {% if data.heading %}
+            <div class="section-header">
+                {% if data.eyebrow %}<span class="badge">{{ data.eyebrow }}</span>{% endif %}
+                <h2>{{ data.heading }}</h2>
+                {% if data.intro %}<p>{{ data.intro }}</p>{% endif %}
+            </div>
+        {% endif %}
+        <div class="gallery-grid">
+            {% for item in data.items %}
+                <figure class="gallery-item">
+                    {% if item.image_url %}<img src="{{ item.image_url }}" alt="{{ item.alt }}">{% endif %}
+                    <figcaption class="gallery-overlay">
+                        {% if item.href %}<h3><a href="{{ item.href }}">{{ item.title }}</a></h3>{% else %}<h3>{{ item.title }}</h3>{% endif %}
+                        {% if item.summary %}<p>{{ item.summary }}</p>{% endif %}
+                    </figcaption>
+                </figure>
+            {% empty %}
+                <p>No portfolio items are published yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "use_json_pages": {
+      "type": "boolean",
+      "default": true
+    },
+    "content_version": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1
+    },
+    "default_description": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "component_defaults": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version"
+  ]
+}

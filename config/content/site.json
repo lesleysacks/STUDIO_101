@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "use_json_pages": true,
+  "content_version": 1,
+  "default_description": "Creative production studio services for photography, podcasts, music videos, and commercial films.",
+  "component_defaults": {
+    "service_grid": {
+      "columns": 3,
+      "limit": 12,
+      "source": "published_services"
+    },
+    "cta": {
+      "primary_cta": {
+        "label": "Book Now",
+        "href": "/book/"
+      },
+      "secondary_cta": {
+        "label": "View Packages & Rates",
+        "href": "/services/"
+      }
+    }
+  }
+}

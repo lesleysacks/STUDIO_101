@@ -1,0 +1,16 @@
+<section>
+    <div class="container" style="max-width: 800px;">
+        {% if data.eyebrow %}<span class="badge">{{ data.eyebrow }}</span>{% endif %}
+        <h2>{{ data.heading }}</h2>
+        {% if data.intro %}<p>{{ data.intro }}</p>{% endif %}
+        <form method="post" action="{% url 'bookings:request' %}">
+            {% csrf_token %}
+            <div class="hp-field" style="position: absolute; left: -9999px;" aria-hidden="true">{{ data.form.honeypot }}</div>
+            <div style="margin-bottom: 16px;"><label for="name">Full name</label>{{ data.form.full_name }}</div>
+            <div style="margin-bottom: 16px;"><label for="email">Email</label>{{ data.form.email }}</div>
+            <div style="margin-bottom: 16px;"><label for="phone">Phone</label>{{ data.form.phone }}</div>
+            <div style="margin-bottom: 16px;"><label for="message">Project details</label>{{ data.form.project_details }}</div>
+            <button type="submit" class="btn-primary">Submit reservation inquiry</button>
+        </form>
+    </div>
+</section>

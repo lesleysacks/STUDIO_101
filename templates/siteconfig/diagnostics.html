@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block meta_title %}Site configuration diagnostics{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container" style="max-width: 900px;">
+        <h1>Site configuration</h1>
+        <p>{{ page_count }} page definition(s), {{ service_count }} service definition(s). This page is read only.</p>
+        {% if config_errors %}
+            <h2>Errors</h2>
+            <ul>
+                {% for issue in config_errors %}
+                    <li><code>{{ issue }}</code></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No validation errors.</p>
+        {% endif %}
+        {% if config_warnings %}
+            <h2>Warnings</h2>
+            <ul>
+                {% for issue in config_warnings %}
+                    <li><code>{{ issue }}</code></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

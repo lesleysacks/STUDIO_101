@@ -1,0 +1,143 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 150
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 400
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 4000
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 300
+        }
+      },
+      "required": [
+        "slug",
+        "name"
+      ]
+    },
+    "featured_image": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "image_alt": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "starting_price": {
+      "type": "number",
+      "minimum": 0
+    },
+    "price_label": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "price_unit": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "duration_label": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 150
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 255
+          }
+        },
+        "required": [
+          "title"
+        ]
+      }
+    },
+    "cta_label": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "cta_href": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "seo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    },
+    "order": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "published": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "slug",
+    "name",
+    "summary",
+    "description",
+    "category",
+    "featured_image",
+    "image_alt"
+  ]
+}
